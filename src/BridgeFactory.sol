@@ -32,7 +32,7 @@ contract BridgeFactory {
     uint256 targetChainId
   );
 
-  event Unlocked(
+  event Unwrapped(
     address indexed sender,
     address indexed user,
     address indexed token,
@@ -89,7 +89,7 @@ contract BridgeFactory {
     address user = msg.sender;
     IWERC20Permit(wrappedToken).burn(user, amount);
 
-    emit Unlocked(msg.sender, user, wrappedToken, amount, targetChainId);
+    emit Unwrapped(msg.sender, user, wrappedToken, amount, targetChainId);
   }
 
   function claim(address user, address token, uint256 amount) external onlyRelayer {

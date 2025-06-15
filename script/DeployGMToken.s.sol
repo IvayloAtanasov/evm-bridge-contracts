@@ -11,7 +11,7 @@ contract DeployGMToken is Script {
     uint256 deployer = vm.envUint("PRIVATE_KEY");
     vm.startBroadcast(deployer);
 
-    uint256 initialSupply = 10_000 * 1e6;
+    uint256 initialSupply = 100_000 * 1e6;
     new GMToken(initialSupply);
 
     vm.stopBroadcast();
