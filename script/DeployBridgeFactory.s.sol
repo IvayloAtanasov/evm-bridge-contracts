@@ -5,15 +5,15 @@ import "forge-std/Script.sol";
 import "../src/BridgeFactory.sol";
 
 contract DeployBridgeFactory is Script {
-  function setUp() public {}
+    function setUp() public {}
 
-  function run() public {
-    uint256 deployer = vm.envUint("PRIVATE_KEY");
-    vm.startBroadcast(deployer);
+    function run() public {
+        uint256 deployer = vm.envUint("PRIVATE_KEY");
+        vm.startBroadcast(deployer);
 
-    address relayer = 0xe64c80DaC84aeE6983C3a2945a84f757e98c6B40;
-    new BridgeFactory(relayer);
+        address relayer = 0xe64c80DaC84aeE6983C3a2945a84f757e98c6B40;
+        new BridgeFactory(relayer);
 
-    vm.stopBroadcast();
-  }
+        vm.stopBroadcast();
+    }
 }
