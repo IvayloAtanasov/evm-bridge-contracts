@@ -11,7 +11,7 @@ contract DeployWGMToken is Script {
         uint256 deployer = vm.envUint("PRIVATE_KEY");
         vm.startBroadcast(deployer);
 
-        address bridge = 0x554645F69ac6de11ba3A682f3f76D2221F0BF80C; // TODO: bridge of chosen network
+        address bridge = 0x2aFa7663137618251C31cb58A72F3B0E2543A2e5; // TODO: bridge of chosen network
         new WERC20("Wrapped Goodmorning", "WGM", 6, bridge);
 
         vm.stopBroadcast();
